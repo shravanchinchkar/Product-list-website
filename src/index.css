@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Regular";
+    src: local("RedHatText-Regular"),
+        url('../public/assets/fonts/RedHatText-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "Bold";
+    src: local("RedHatText-Bold"),
+        url('../public/assets/fonts/RedHatText-Bold.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: "SemiBold";
+    src: local("RedHatText-SemiBold"),
+        url('../public/assets/fonts/RedHatText-SemiBold.ttf') format("truetype");
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#root {
+    /* width:100vw;
+    height:max-content; */
+    background-color: #fcf9f7;
+    display: flex;
+    gap: 2rem;
+    padding-left: 10rem;
+    padding-top: 5rem;
+}
