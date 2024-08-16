@@ -1,30 +1,86 @@
 import React from "react";
+import { memo, useState, useContext, useEffect } from "react";
+import Footerli from "./Footerli";
+import EmptyCartLi from "./EmptyCartLi";
+import { productListContext } from "../context/context";
 
 const Cart = () => {
+  const value = useContext(productListContext);
+  const menusInCart = value.selectedmenu;
+  console.log("menusInCart:", menusInCart);
+
+  useEffect(() => {
+    let payableamountofitem = menusInCart.map((item) => {
+      return (item.count * item.price).toFixed(2);
+    });
+    console.log("Updated:", payableamountofitem);
+    let amountpayable = payableamountofitem
+      .reduce((acc, curr) => acc + parseFloat(curr), 0)
+      .toFixed(2);
+    console.log("amount payable:", amountpayable);
+    value.settotalamount(amountpayable);
+  }, [menusInCart]);
+
+  let removeItemFromCart = (e) => {
+    let id=e.target.closest("div[id]").id;
+    let updatedmenusInCart=menusInCart.filter((item)=>{
+      return item.menuname!=id;
+    })
+    value.setselectedmenu(updatedmenusInCart);
+  };
+
   return (
-    <div
-      className="cartcontainer  w-[300px] h-[250px] rounded-lg p-[1rem] 
-     bg-white shadow-cartshadow left-[1000px] fixed"
+    <ul
+      className="cartcontainer  w-[300px] h-max rounded-lg p-[1rem] 
+     bg-white shadow-cartshadow left-[1000px]"
     >
-      <div className="cartcount font-redhattextsemibold text-[#c73a0f]">
-        Your Cart (0)
-      </div>
+      <li className="cartcount font-redhattextsemibold text-[#c73a0f]">
+        Your Cart ({menusInCart.length})
+      </li>
 
-      <div className="cartitems flex flex-col items-center">
-        <div className="emptycartimg ">
-          <img
-            src="./assets/images/illustration-empty-cart.svg"
-            alt="emptycart"
-          />
-        </div>
-
-        <div className="emptycarttext font-redhattextbold text-[13px] text-[#ad8985]">
-          <p>Your added items will appear here</p>
-        </div>
-
-      </div>
-    </div>
+      {menusInCart.length === 0 ? (
+        <EmptyCartLi />
+      ) : (
+        menusInCart.map((item) => {
+          return (
+            <li
+              className="flex justify-between pb-[0.5rem] border-b-[2px] mt-[1rem]"
+              key={item.menuname}
+            >
+              <div className="w-[200px]">
+                <div className="font-redhattextbold text-[#260f08]">
+                  {item.menuname}
+                </div>
+                <div className="font-redhattextbold flex gap-[15px] text-[15px]">
+                  <p className="text-[#c73a0f]">{item.count}x</p>
+                  <p className="text-[#c9aea6]">@ ${item.price.toFixed(2)}</p>
+                  <p className="text-[#87635a]">
+                    ${(item.count * item.price).toFixed(2)}
+                  </p>
+                </div>
+              </div>
+              <div
+                className="w-[25px] cursor-pointer"
+                onClick={removeItemFromCart}
+                id={item.menuname}
+              >
+                <img
+                  className="w-[100%] h-[100%]"
+                  src="/assets/images/icon-remove-item.svg"
+                  alt="cancle"
+                />
+              </div>
+            </li>
+          );
+        })
+      )}
+      {/* Following is the footer li */}
+      {menusInCart.length === 0 ? (
+        <Footerli displayfooterli={"none"} />
+      ) : (
+        <Footerli displayfooterli={"block"} totalamount={value.totalamount} />
+      )}
+    </ul>
   );
 };
-
-export default Cart;
+export default memo(Cart);

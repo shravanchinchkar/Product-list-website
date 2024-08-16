@@ -24,14 +24,17 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
+body{
+    position: relative;
+}
 #root {
     /* width:100vw;
     height:max-content; */
     background-color: #fcf9f7;
     display: flex;
+    justify-content: center;
+    /* align-items: center; */
     gap: 2rem;
-    padding-left: 10rem;
+    /* padding-left: 10rem; */
     padding-top: 5rem;
 }

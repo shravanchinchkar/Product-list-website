@@ -2,6 +2,7 @@
 export default {
   content: [
     "./index.html",
+    "./public/assets/images/**/*.{svg,jpg}",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
