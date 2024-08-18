@@ -1,13 +1,14 @@
 import React,{useContext} from "react";
 import { productListContext } from "../context/context";
+import { memo } from "react";
 
 const VanillaPannaCotta = ({item,isSelected}) => {
   const value=useContext(productListContext);
+  console.log("vanilla item:",item)
 
   return (
     <div
       className="relative new-2sm:grid-cols-1 new-sm:col-start-1 new-sm:col-end-3 new-sm:justify-self-center new-md:col-auto"
-      key={item.name}
     >
       <div
         className={
@@ -110,4 +111,4 @@ const VanillaPannaCotta = ({item,isSelected}) => {
   );
 };
 
-export default VanillaPannaCotta;
+export default memo(VanillaPannaCotta);

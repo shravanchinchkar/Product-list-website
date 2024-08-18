@@ -16,7 +16,7 @@ const OrderConfirm = () => {
       className="absolute top-0 left-0 z-10 bg-black bg-opacity-50  w-[100%] h-[100%] justify-center new-sm:items-center new-2sm:items-end"
       style={{ display: value.displayOrderConfirmedCard }}
     >
-      <div className="flex flex-col gap-[0.5rem] z-10 w-[450px] p-[2rem] bg-white new-sm:rounded-lg new-2sm:rounded-bl-none new-2sm:rounded-br-none  shadow-cartshadow">
+      <div className="flex flex-col gap-[0.5rem] z-10 w-[450px] p-[2rem] bg-white new-sm:rounded-lg new-2sm:rounded-bl-none new-2sm:rounded-br-none new-2sm:rounded-tl-lg new-2sm:rounded-tr-lg  shadow-cartshadow">
         <div className="w-[40px] h-[40px]">
           <img
             className="w-[100%] h-[100%]"

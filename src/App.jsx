@@ -116,7 +116,7 @@ function App() {
             {menudata.map((item,index) => {
               if (index === 8) {
                 return (
-                  <VanillaPannaCotta item={item} isSelected={isSelected}/>
+                  <VanillaPannaCotta key={item.name} item={item} isSelected={isSelected}/>
                 );
               }
               return (
