@@ -38,5 +38,6 @@ body{
 @media screen and (min-width:300px) and (max-width:1024px) {
     #root{
         flex-direction: column;
+        padding-top: 2rem;
     }
 }
