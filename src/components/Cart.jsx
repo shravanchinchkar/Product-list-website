@@ -31,8 +31,8 @@ const Cart = () => {
 
   return (
     <ul
-      className="cartcontainer  w-[300px] h-max rounded-lg p-[1rem] 
-     bg-white shadow-cartshadow left-[1000px]"
+      className="cartcontainer new-sm:ml-auto new-sm:mr-auto new-sm:mt-[1rem] new-lg:mt-0 new-sm:mb-[2rem] new-xl:mr-[2rem] new-2xl:mr-[9rem]  new-sm:w-[400px] new-lg:mr-[2rem] new-lg:w-[300px] h-max rounded-lg p-[1rem] 
+     bg-white shadow-cartshadow new-2sm:w-[300px] new-2sm:ml-auto mr-auto mt-auto mb-[1rem]"
     >
       <li className="cartcount font-redhattextsemibold text-[#c73a0f]">
         Your Cart ({menusInCart.length})
