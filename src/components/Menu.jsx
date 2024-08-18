@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { productListContext } from "../context/context";
 import { memo } from "react";
 
-const VanillaPannaCotta = ({ item, isSelected }) => {
+const Menu = ({ item, isSelected }) => {
   const value = useContext(productListContext);
   return (
-    <div className="relative new-2sm:grid-cols-1 new-sm:col-start-1 new-sm:col-end-3 new-sm:justify-self-center new-md:col-auto">
+    <div className="relative new-sm:justify-self-center new-md:justify-self-auto">
       <div
         className={
           isSelected.includes(item.name)
@@ -28,11 +28,12 @@ const VanillaPannaCotta = ({ item, isSelected }) => {
           src={item.image.mobile}
           alt={item.name}
         />
+
         <div
           className={
             isSelected.includes(item.name)
-              ? "w-[150px] h-[50px] flex justify-around items-center gap-[8px] absolute z-10 new-xl:top-[215px] new-xl:left-[50px] new-md:top-[170px] new-md:left-[30px] text-balck font-redhattextbold  rounded-[5rem] bg-[#c73a0f] new-2sm:top-[170px] new-2sm:left-[70px] new-sm:left-[25px] cursor-pointer"
-              : "w-[150px] h-[50px] flex justify-center items-center gap-[8px] absolute z-10 new-xl:top-[215px] new-xl:left-[50px] new-lg:top-[180px] new-md:left-[30px] new-md:top-[170px] new-2sm:top-[170px] new-sm:left-[25px] new-2sm:left-[70px] text-balck font-redhattextbold  rounded-[5rem] border-[2px] cursor-pointer bg-white hover:text-[#c73a0f]  hover:border-[#c73a0f]"
+              ? "w-[150px] h-[50px] flex justify-around items-center gap-[8px] absolute z-10 new-xl:top-[215px] new-xl:left-[50px] new-md:top-[170px] new-md:left-[30px] new-2sm:top-[170px] new-sm:left-[25px] new-2sm:left-[70px] text-balck font-redhattextbold  rounded-[5rem] bg-[#c73a0f]  cursor-pointer"
+              : "w-[150px] h-[50px] flex justify-center items-center gap-[8px] absolute z-10 new-xl:top-[215px] new-xl:left-[50px] new-lg:top-[180px] new-md:left-[30px] new-md:top-[170px] new-2sm:top-[170px] new-sm:left-[25px] new-2sm:left-[70px] text-balck font-redhattextbold  rounded-[5rem] border-[2px] cursor-pointer bg-white hover:text-[#c73a0f] hover:border-[#c73a0f]"
           }
           id={item.name}
           onClick={value.addToCart}
@@ -75,19 +76,20 @@ const VanillaPannaCotta = ({ item, isSelected }) => {
                 : `Add to cart`}
             </p>
           </div>
-
+          {/* hover:bg-white p-[2px] rounded-[50%] border-[2px] */}
           <div
             className={
               isSelected.includes(item.name)
-                ? "w-[20px] h-[20px] minusimage flex justify-center items-center p-[2px] rounded-[50%] border-[2px]"
-                : " hidden"
+                ? "w-[20px] h-[20px] incrementparent flex justify-center items-center p-[2px] rounded-[50%] border-[2px]"
+                : "hidden"
             }
             id={item.name}
             onClick={value.increaseItem}
           >
             <img
               src="/assets/images/icon-increment-quantity.svg"
-              alt="decerement"
+              alt="increment"
+              className="increment-img"
             />
           </div>
         </div>
@@ -106,4 +108,4 @@ const VanillaPannaCotta = ({ item, isSelected }) => {
   );
 };
 
-export default memo(VanillaPannaCotta);
+export default memo(Menu);

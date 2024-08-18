@@ -1,4 +1,5 @@
 import React from "react";
+import { memo } from "react";
 
 const EmptyCartLi = () => {
   return (
@@ -13,4 +14,4 @@ const EmptyCartLi = () => {
   );
 };
 
-export default EmptyCartLi;
+export default memo(EmptyCartLi);

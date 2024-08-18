@@ -34,6 +34,7 @@ body{
     gap: 2rem;
     padding-top: 5rem;
 }
+
 @media screen and (min-width:300px) and (max-width:1024px) {
     #root{
         flex-direction: column;

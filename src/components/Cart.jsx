@@ -1,5 +1,5 @@
 import React from "react";
-import { memo, useState, useContext, useEffect } from "react";
+import { memo,useContext, useEffect } from "react";
 import Footerli from "./Footerli";
 import EmptyCartLi from "./EmptyCartLi";
 import { productListContext } from "../context/context";

@@ -2,14 +2,15 @@ import React from "react";
 import { useContext } from "react";
 import OrderConfirmedLiFooetr from "./OrderConfirmedLiFooetr";
 import { productListContext } from "../context/context";
+import { memo } from "react";
 
 const OrderConfirm = () => {
   let value = useContext(productListContext);
-  let newOrder=()=>{
-    console.log("Hello")
-    value.setdisplayOrderConfirmedCard("none")
-    value.setselectedmenu([])
-  }
+  let newOrder = () => {
+    console.log("Hello");
+    value.setdisplayOrderConfirmedCard("none");
+    value.setselectedmenu([]);
+  };
 
   return (
     <div
@@ -100,4 +101,4 @@ const OrderConfirm = () => {
   );
 };
 
-export default OrderConfirm;
+export default memo(OrderConfirm);
