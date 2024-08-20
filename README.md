@@ -12,7 +12,7 @@ Tailwind Css
 ```
 
 ```
-The output is live on  [product-list-cart] (https://productlistwebsite.vercel.app/)
+The output is live on [product-list-cart] (https://productlistwebsite.vercel.app/)
 ```
 
 **Things remaining to implement in this project**
