@@ -57,8 +57,6 @@ I learned a lot of things while implementing the challenge. How to use react hoo
 I am still not completely developed in the web development technologies.I am still acquiring the knowledge in various field like Next.js,MongoDb,Deployment technologies etc.
 
 ## Author
-
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@shravanchinchkar](https://www.frontendmentor.io/profile/shravanchinchkar)
 - Twitter - [@_shravan26_](https://x.com/_shravan26_)
 
