@@ -41,3 +41,20 @@ body{
         padding-top: 2rem;
     }
 }
+#incrementbutton{
+    fill: #fff;
+    width: 60px;
+    height: 100%;
+    margin: 1px;
+}
+#decrementbutton{
+    fill: #fff;
+    width: 100px;
+    height: 100%;
+    margin: 1px;
+
+}
+#incrementbutton:hover, #decrementbutton:hover{
+    fill: #c73a0f; 
+}
+

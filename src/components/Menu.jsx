@@ -49,16 +49,20 @@ const Menu = ({ item, isSelected }) => {
           <div
             className={
               isSelected.includes(item.name)
-                ? "w-[20px] h-[20px] minusimage flex  justify-center items-center p-[2px] rounded-[50%] border-[2px]"
+                ? "w-[20px] h-[20px] minusimage flex  justify-center items-center rounded-[50%] border-[2px] hover:bg-white"
                 : "hidden"
             }
             id={item.name}
             onClick={value.decreaseItem}
           >
-            <img
-              src="/assets/images/icon-decrement-quantity.svg"
-              alt="decerement"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 2"
+              id="decrementbutton"
+            >
+              <path fillRule="1" d="M0 .375h10v1.25H0V.375Z" />
+            </svg>
           </div>
 
           <div>
@@ -76,21 +80,26 @@ const Menu = ({ item, isSelected }) => {
                 : `Add to cart`}
             </p>
           </div>
-          {/* hover:bg-white p-[2px] rounded-[50%] border-[2px] */}
           <div
             className={
               isSelected.includes(item.name)
-                ? "w-[20px] h-[20px] incrementparent flex justify-center items-center p-[2px] rounded-[50%] border-[2px]"
+                ? "w-[20px] h-[20px] incrementparent flex justify-center items-center rounded-[50%] border-[2px] hover:bg-white "
                 : "hidden"
             }
             id={item.name}
             onClick={value.increaseItem}
           >
-            <img
-              src="/assets/images/icon-increment-quantity.svg"
-              alt="increment"
-              className="increment-img"
-            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 10"
+              id="incrementbutton"
+            >
+              <path
+                fillRule="1"
+                d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+              />
+            </svg>
           </div>
         </div>
       </div>
